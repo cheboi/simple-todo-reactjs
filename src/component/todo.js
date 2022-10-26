@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function Todo({ todo, index, markTodo, removeTodo }) {
-
   return (
     <div className="todo">
       <div>
