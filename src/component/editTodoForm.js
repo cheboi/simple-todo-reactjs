@@ -9,7 +9,6 @@ const EditTodoForm = (props) => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-
     console.log(todo);
     setTodo({ ...todo, [name]: value });
   };
@@ -72,7 +71,7 @@ const EditTodoForm = (props) => {
         />
         Medium
       </div>
-      <button>Update Todo</button>
+      <button className="submit-btn">Update Todo</button>
       <button
         onClick={() => props.setEditing(false)}
         className="button muted-button"

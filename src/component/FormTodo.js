@@ -15,16 +15,13 @@ function FormTodo(props) {
     setTodo({ ...todo, [name]: value });
   };
 
-  // const changePrioriy = (option) => {
-  //   setTodo(option)
-  // }
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!todo.title || !todo.description || !todo.dueDate) return;
-
     props.addTodo(todo);
     setTodo(initialFormState);
   };
+
   return (
     <form onSubmit={handleSubmit} className="form-control">
       <h3>Add Todo</h3>
@@ -78,7 +75,7 @@ function FormTodo(props) {
         Medium
       </div>
 
-      <input class="submit-btn" type="submit" />
+      <input className="submit-btn" type="submit" />
     </form>
   );
 }
