@@ -25,12 +25,14 @@ function FormTodo(props) {
   };
   return (
     <form onSubmit={handleSubmit} className="form-control">
+      <h3>Add Todo</h3>
       <label>Title</label>
       <input
         type="text"
         name="title"
         value={todo.title}
         onChange={handleInputChange}
+        className="text-title"
       />
       <label>Description</label>
       <textarea
@@ -39,6 +41,8 @@ function FormTodo(props) {
         onChange={handleInputChange}
         rows={5}
         cols={5}
+        className="text-description"
+
       />
       <label>Date</label>
       <input
@@ -46,6 +50,8 @@ function FormTodo(props) {
         name="dueDate"
         value={todo.dueDate}
         onChange={handleInputChange}
+        className="text-date"
+
       />
       <label>Priority</label>
       <input
@@ -54,7 +60,7 @@ function FormTodo(props) {
         value={todo.priority}
         onChange={handleInputChange}
       />
-      <input type="submit" />
+      <input class="submit-btn" type="submit" />
     </form>
   );
 }

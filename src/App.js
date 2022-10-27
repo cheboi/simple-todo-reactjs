@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Todo from "./component/todo";
 import FormTodo from "./component/FormTodo";
-// import Search from "./component/search";
+import EditTodoForm from "./component/editTodoForm";
 
 function App() {
   const todosData = [
@@ -28,6 +28,15 @@ function App() {
       priority: "Low",
     },
   ];
+  const initialFormState = {
+    id: null,
+    title: "",
+    description: "",
+    dueDate: "",
+    priority: "",
+  };
+  const [currentTodo, setCurrentTodo] = useState(initialFormState);
+  const [editing, setEditing] = useState(false);
   const [todos, setTodos] = useState(todosData);
   const [query, setQuery] = useState("");
 
@@ -48,14 +57,46 @@ function App() {
     setTodos(newTodos);
   };
 
+  const editTodo = (todo) => {
+    setEditing(true);
+
+    setCurrentTodo({
+      id:todo.id,
+      title: todo.title,
+      description: todo.description,
+      dueDate: todo.dueDate,
+      priority: todo.priority,
+    });
+  };
+
+  const updateTodo = (id, updatedTodo) => {
+    setEditing(false);
+
+    setTodos(todos.map((todo) => (todo.id === id ? updatedTodo : todo)));
+  };
+
   return (
     <div className="App">
+      <h1 className="text-center">Todo List</h1>
       <div className="Container">
-        <h1 className="text-center">Todo List</h1>
-        {/* <Search /> */}
-        <FormTodo addTodo={addTodo} />
-        <div>
+        {editing ? (
+          <div>
+            <h2>Edit Todo</h2>
+            <EditTodoForm
+              setEditing={setEditing}
+              currentTodo={currentTodo}
+              updateTodo={updateTodo}
+            />
+          </div>
+        ) : (
+          <div className="add-form">
+            <FormTodo addTodo={addTodo} />
+          </div>
+        )}
+
+        <div className="display-input">
           <input
+            type="search"
             placeholder="Enter Todo Title"
             onChange={(event) => setQuery(event.target.value)}
           />
@@ -78,6 +119,7 @@ function App() {
                     todo={todo}
                     markTodo={markTodo}
                     removeTodo={removeTodo}
+                    editTodo={editTodo}
                   />
                 </div>
               </div>

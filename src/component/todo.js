@@ -1,23 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Todo({ todo, index, markTodo, removeTodo }) {
+function Todo({ todo, index, markTodo, removeTodo, editTodo }) {
   return (
     <div className="todo">
       <div>
-        <span style={{ textDecoration: todo.isDone ? "line-through" : "" }}>
+        <span style={{ textDecoration: todo.isDone ? "line-through" : "", fontWeight: "bolder", fontStyle: "italic" }}>
           {todo.title}
         </span>
-        <span style={{ textDecoration: todo.isDone ? "line-through" : "" }}>
+        <br />
+        <span style={{ display: todo.isDone ? "hide" : "show" }}>
           {todo.description}
         </span>
+        <br />
         <span style={{ textDecoration: todo.isDone ? "line-through" : "" }}>
           {todo.dueDate}
         </span>
-        <span style={{ textDecoration: todo.isDone ? "line-through" : "" }}>
-          {todo.priority}
+        <br />
+        <span style={{ textDecoration: todo.isDone ? "line-through" : "", color: todo.priority.High ? "red" : "yellow", }} >
+          Priority: {todo.priority}
         </span>
 
-        <div>
+        <div class="input-buttons">
+          <button
+            onClick={() => {
+              editTodo(todo);
+            }}
+            className="button muted-button"
+          >
+            Edit
+          </button>
           <button className="mark-done" onClick={() => markTodo(index)}>
             ✓
           </button>{" "}
