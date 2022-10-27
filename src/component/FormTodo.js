@@ -15,10 +15,12 @@ function FormTodo(props) {
     setTodo({ ...todo, [name]: value });
   };
 
+  // const changePrioriy = (option) => {
+  //   setTodo(option)
+  // }
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!todo.title || !todo.description || !todo.dueDate || !todo.priority)
-      return;
+    if (!todo.title || !todo.description || !todo.dueDate) return;
 
     props.addTodo(todo);
     setTodo(initialFormState);
@@ -42,7 +44,6 @@ function FormTodo(props) {
         rows={5}
         cols={5}
         className="text-description"
-
       />
       <label>Date</label>
       <input
@@ -51,15 +52,32 @@ function FormTodo(props) {
         value={todo.dueDate}
         onChange={handleInputChange}
         className="text-date"
-
       />
       <label>Priority</label>
-      <input
-        type="select"
-        name="priority"
-        value={todo.priority}
-        onChange={handleInputChange}
-      />
+      <div className="priority-input">
+        <input
+          type="radio"
+          name="priority"
+          value="high"
+          onChange={handleInputChange}
+        />
+        High
+        <input
+          type="radio"
+          name="priority"
+          value="low"
+          onChange={handleInputChange}
+        />
+        Low
+        <input
+          type="radio"
+          name="priority"
+          value="medium"
+          onChange={handleInputChange}
+        />
+        Medium
+      </div>
+
       <input class="submit-btn" type="submit" />
     </form>
   );

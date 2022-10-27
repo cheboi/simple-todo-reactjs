@@ -61,7 +61,7 @@ function App() {
     setEditing(true);
 
     setCurrentTodo({
-      id:todo.id,
+      id: todo.id,
       title: todo.title,
       description: todo.description,
       dueDate: todo.dueDate,

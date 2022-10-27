@@ -8,15 +8,15 @@ function Todo({ todo, index, markTodo, removeTodo, editTodo }) {
           {todo.title}
         </span>
         <br />
-        <span style={{ display: todo.isDone ? "hide" : "show" }}>
+        <span style={{ visibility: todo.isDone ? "hidden" : "visible" }}>
           {todo.description}
         </span>
         <br />
-        <span style={{ textDecoration: todo.isDone ? "line-through" : "" }}>
+        <span style={{ visibility: todo.isDone ? "hidden" : "visible" }}>
           {todo.dueDate}
         </span>
         <br />
-        <span style={{ textDecoration: todo.isDone ? "line-through" : "", color: todo.priority.High ? "red" : "yellow", }} >
+        <span style={{color: todo.priority.High ? "red" : "yellow", }} >
           Priority: {todo.priority}
         </span>
 
