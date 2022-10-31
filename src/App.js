@@ -22,11 +22,18 @@ function App() {
     },
     {
       id: 3,
-      title: "Go to church",
-      description: "Visit My Nun Sister",
-      dueDate: "10/28/2022",
-      priority: "Low",
+      title: "Go to Market",
+      description: "Buy some groceries",
+      dueDate: "10/29/2022",
+      priority: "Medium",
     },
+    {
+      id: 4,
+      title: "Go to Temple",
+      description: "Have Some Prayers",
+      dueDate: "10/20/2022",
+      priority: "High",
+    }
   ];
   const initialFormState = {
     id: null,
@@ -93,13 +100,13 @@ function App() {
             <FormTodo addTodo={addTodo} />
           </div>
         )}
-
-        <div className="display-input">
+        <div className="display">
           <input
             type="search"
-            placeholder="Enter Todo Title"
+            placeholder="Search"
             onChange={(event) => setQuery(event.target.value)}
           />
+          <div  className="display-input">
           {todos
             .filter((todo) => {
               if (query === "") {
@@ -124,6 +131,7 @@ function App() {
                 </div>
               </div>
             ))}
+          </div>
         </div>
       </div>
     </div>

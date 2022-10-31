@@ -22,7 +22,6 @@ const EditTodoForm = (props) => {
       className = "form-control"
     >
       <h3>Edit Todo</h3>
-      <label>Title</label>
       <input
         type="text"
         name="title"
@@ -31,11 +30,12 @@ const EditTodoForm = (props) => {
         className="text-title"
       />
       <label>Description</label>
-      <input
-        type="text"
-        name="description"
+      <textarea
         value={todo.description}
+        name="description"
         onChange={handleInputChange}
+        rows={5}
+        cols={5}
         className="text-description"
       />
       <label>Date</label>
@@ -45,7 +45,6 @@ const EditTodoForm = (props) => {
         value={todo.dueDate}
         onChange={handleInputChange}
         className="text-date"
-
       />
       <label>Priority</label>
       <div className="priority-input">

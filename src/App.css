@@ -1,10 +1,12 @@
 *{
   margin: 0;
   padding: 0;
-}.App {
+}
+.App {
   text-align: center;
   color:#fff;
-  background-color: #1EE196;
+  background-color: #688297;
+  height: 100%;
 }
 .Container {
   align-items: center;

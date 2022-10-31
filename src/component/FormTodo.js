@@ -17,7 +17,7 @@ function FormTodo(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!todo.title || !todo.description || !todo.dueDate) return;
+    if (!todo.title || !todo.description || !todo.dueDate || !todo.priority) return;
     props.addTodo(todo);
     setTodo(initialFormState);
   };

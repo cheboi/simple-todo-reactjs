@@ -16,7 +16,7 @@ function Todo({ todo, index, markTodo, removeTodo, editTodo }) {
           {todo.dueDate}
         </span>
         <br />
-        <span style={{color: todo.priority.High ? "red" : "yellow", }} >
+        <span className="priority ${todo.priority}" >
           Priority: {todo.priority}
         </span>
 
@@ -25,7 +25,7 @@ function Todo({ todo, index, markTodo, removeTodo, editTodo }) {
             onClick={() => {
               editTodo(todo);
             }}
-            className="button muted-button"
+            className="button muted-button edit-button"
           >
             Edit
           </button>
