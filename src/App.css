@@ -1,21 +1,20 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 .App {
   text-align: center;
-  color:#fff;
+  color: #fff;
   background-color: #688297;
   height: 100%;
 }
 .Container {
   align-items: center;
-  padding: 20px ;
-  display: flex;
+  background-color: #977d68;
 }
-.display-input{
+.display-input {
   margin: 0;
 }
-.add-form{
+.add-form {
   padding-left: 5px;
 }

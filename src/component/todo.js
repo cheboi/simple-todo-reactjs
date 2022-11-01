@@ -4,19 +4,40 @@ function Todo({ todo, index, markTodo, removeTodo, editTodo }) {
   return (
     <div className="todo">
       <div>
-        <span style={{ textDecoration: todo.isDone ? "line-through" : "", fontWeight: "bolder", fontStyle: "italic" }}>
+        <div
+          style={{
+            textDecoration: todo.isDone ? "line-through" : "",
+            fontWeight: "bolder",
+            fontStyle: "italic",
+            fontSize: "20px",
+            marginLeft: "5px",
+            marginBottom: '0px'
+          }}
+        >
           {todo.title}
-        </span>
+        </div>
         <br />
-        <span style={{ visibility: todo.isDone ? "hidden" : "visible" }}>
+        <div
+          style={{ visibility: todo.isDone ? "hidden" : "visible" }}
+          className="description"
+        >
           {todo.description}
-        </span>
+        </div>
         <br />
-        <span style={{ visibility: todo.isDone ? "hidden" : "visible" }}>
+        <span
+          style={{
+            visibility: todo.isDone ? "hidden" : "visible",
+            marginLeft: "5px",
+          }}
+        >
           {todo.dueDate}
         </span>
         <br />
-        <span className="priority ${todo.priority}" >
+        <span
+          style={{
+            marginLeft: "5px",
+          }}
+        >
           Priority: {todo.priority}
         </span>
 

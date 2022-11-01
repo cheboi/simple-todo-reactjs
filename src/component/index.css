@@ -1,79 +1,90 @@
 .form-control {
   border-style: solid;
   border-width: 2px;
-  width: 40vw;
+  width: 30vw;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  background-color: #977D68;
+  background-color: #977d68;
   text-align: left;
+  color: #fff;
+  margin-top: 10px;
 }
 textarea {
   font-family: inherit;
   font-size: 100%;
 }
-.todo{
+.todo {
   background-color: #688297;
   border-style: solid;
-  border-radius: 2px; 
+  border-radius: 2px;
   border-width: 2px;
   margin: 2px;
   border-style: solid;
-  border-radius: 2px;
+  border-radius: 5px;
+  text-align: left;
 }
 
-.input-buttons{
+.input-buttons {
   float: right;
   margin-left: 0;
 }
-input[type=search] { 
-	color: #1E6AE1;  
-	text-align: right;
-	cursor: pointer;
-	display: block; 
-	width: 35vw;
-  height: 30px; 
-	letter-spacing: 4px;        
-	text-shadow: 0 0 2px black;       
-	word-spacing: 20px;   
+input[type="search"] {
+  color: #1e6ae1;
+  text-align: right;
+  cursor: pointer;
+  display: block;
+  width: 70vw;
+  height: 30px;
+  letter-spacing: 4px;
+  text-shadow: 0 0 2px black;
+  word-spacing: 20px;
   margin-top: 0px;
-  margin-left: 10px;  
+  margin-left: 10px;
   margin-bottom: 5px;
-  border-radius: 8px;    
+  border-radius: 8px;
 }
 
-input[type=submit]{
+input[type="submit"] {
   color: #fff;
-  background-color: #1E6AE1;
+  background-color: #1e6ae1;
   margin: 0.4rem;
   border-radius: 8px;
   border-bottom: white;
 }
-.text-description{
+.text-description {
   margin: 6px;
   border-radius: 8px;
 }
-.text-date{
+.text-date {
   margin: 5px;
   border-radius: 8px;
+  height: 30px;
 }
-.text-title{
+.text-title {
   margin: 6px;
   border-radius: 8px;
+  height: 30px;
 }
-.text-priority{
+.text-priority {
   margin: 6px;
   border-radius: 8px;
+  height: 30px;
 }
-label{
+label {
   font-weight: 900;
   float: left;
   font-size: medium;
 }
-.display{
+.display {
   padding: 20px;
-  width: 100%;
-  background-color: #977D68;
+  padding-top: 20px;
+  padding-right: 10%;
+  padding-left: 10%;
+  width: 76%;
+  height: 600px;
+  background-color: #977d68;
   position: static;
   align-items: center;
   margin-left: 20px;
@@ -81,24 +92,38 @@ label{
   border-width: 2px;
   border-radius: 12px;
 }
-.display-input{
+.display-input {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.priority High{
+.priority High {
   color: Red;
 }
-.submit-btn{
+.description {
+  width: "20vw";
+  border-color: "white";
+  border-style: solid;
+  height: min-content;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 2px;
+  border-radius: 5px;
+}
+.submit-btn {
   background-color: #386ec5;
   color: #fff;
+  height: 30px;
 }
-.muted-button{
-  background-color:hsl(0, 100%, 50%);
+.muted-button {
+  background-color: hsl(0, 100%, 50%);
   color: #fff;
 }
-.edit-button{
+.edit-button {
   background-color: buttonface;
   color: black;
+}
+.priority-input{
+  margin-left: 5px;
 }

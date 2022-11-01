@@ -20,12 +20,18 @@ function FormTodo(props) {
     if (!todo.title || !todo.description || !todo.dueDate || !todo.priority) return;
     props.addTodo(todo);
     setTodo(initialFormState);
+
+    
   };
+
+  const handleClose = (e) =>{
+    props.closeModal()
+  }
 
   return (
     <form onSubmit={handleSubmit} className="form-control">
-      <h3>Add Todo</h3>
-      <label>Title</label>
+      <h3 style={{marginLeft: '5px'}}>Add Todo</h3>
+      <label style={{marginLeft: '5px'}}>Title</label>
       <input
         type="text"
         name="title"
@@ -33,7 +39,7 @@ function FormTodo(props) {
         onChange={handleInputChange}
         className="text-title"
       />
-      <label>Description</label>
+      <label style={{marginLeft: '5px'}}>Description</label>
       <textarea
         value={todo.description}
         name="description"
@@ -42,7 +48,7 @@ function FormTodo(props) {
         cols={5}
         className="text-description"
       />
-      <label>Date</label>
+      <label style={{marginLeft: '5px'}}>Date</label>
       <input
         type="date"
         name="dueDate"
@@ -50,7 +56,7 @@ function FormTodo(props) {
         onChange={handleInputChange}
         className="text-date"
       />
-      <label>Priority</label>
+      <label style={{marginLeft: '5px'}}>Priority</label>
       <div className="priority-input">
         <input
           type="radio"

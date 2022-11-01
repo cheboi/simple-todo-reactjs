@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './index.css'
 
 const EditTodoForm = (props) => {
   const [todo, setTodo] = useState(props.currentTodo);
@@ -21,7 +22,8 @@ const EditTodoForm = (props) => {
       }}
       className = "form-control"
     >
-      <h3>Edit Todo</h3>
+      <h3 style={{marginLeft: '5px'}}>Edit Todo</h3>
+      <label style={{marginLeft: '5px'}}>Todo Title</label>
       <input
         type="text"
         name="title"
@@ -29,7 +31,7 @@ const EditTodoForm = (props) => {
         onChange={handleInputChange}
         className="text-title"
       />
-      <label>Description</label>
+      <label style={{marginLeft: '5px'}}>Description</label>
       <textarea
         value={todo.description}
         name="description"
@@ -38,7 +40,7 @@ const EditTodoForm = (props) => {
         cols={5}
         className="text-description"
       />
-      <label>Date</label>
+      <label style={{marginLeft: '5px'}}>Date</label>
       <input
         type="date"
         name="dueDate"
@@ -46,7 +48,7 @@ const EditTodoForm = (props) => {
         onChange={handleInputChange}
         className="text-date"
       />
-      <label>Priority</label>
+      <label style={{marginLeft: '5px'}}>Priority</label>
       <div className="priority-input">
         <input
           type="radio"
@@ -70,13 +72,7 @@ const EditTodoForm = (props) => {
         />
         Medium
       </div>
-      <button className="submit-btn">Update Todo</button>
-      <button
-        onClick={() => props.setEditing(false)}
-        className="button muted-button"
-      >
-        Cancel
-      </button>
+      <button className="submit-btn" style={{margin: '5px', borderRadius: '5px'}}>Update Todo</button>
     </form>
   );
 };
